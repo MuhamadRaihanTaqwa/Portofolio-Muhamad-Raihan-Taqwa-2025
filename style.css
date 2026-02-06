@@ -1,0 +1,887 @@
+/* PALET WARNA: 
+    - Latar Belakang: #0d0023
+    - Primer (Aksen): #7a00ff (Ungu Neon)
+    - Sekunder: #00bcd4 (Biru Cyan)
+    - Teks: #e0e0e0 (Abu-abu terang)
+*/
+
+/* RESET DAN DASAR */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0023;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* HEADER / HERO SECTION */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #0d0023 0%, #1a004c 70%, #000000 100%);
+    overflow: hidden;
+}
+
+/* NAVIGASI UTAMA */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 20; /* Tambahan agar nav selalu di atas */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #7a00ff;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #7a00ff;
+    text-shadow: 0 0 8px rgba(122, 0, 255, 0.8);
+    border-bottom: 2px solid #7a00ff;
+    padding-bottom: 3px;
+}
+
+/* KONTEN HERO */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 500px;
+}
+
+.tagline {
+    color: #00bcd4;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 1px solid #00bcd4;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+/* SKILLS TAGS */
+.hero-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.skill-tag {
+    background-color: rgba(122, 0, 255, 0.1);
+    color: #7a00ff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: 500;
+    border: 1px solid #7a00ff;
+}
+
+/* TOMBOL AKSI */
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #7a00ff;
+    color: white;
+    box-shadow: 0 0 15px rgba(122, 0, 255, 0.5);
+}
+
+.btn-primary:hover {
+    background-color: #9933ff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+    transform: translateY(-2px);
+}
+
+/* IKON SOSIAL MEDIA */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #e0e0e0;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #7a00ff;
+}
+
+/* KODE BARU (SETELAH DIUBAH) */
+.hero-illustration {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 450px;
+    /* Ganti nama file di dalam tanda kutip '' di bawah ini */
+    background: url('foto-profile.jpg') center center/cover;
+    border-radius: 10px;
+    z-index: 5;
+    /* Animasi denyut (opsional, jika ingin dihapus silahkan) */
+    animation: pulse 4s infinite ease-in-out;
+    /* Tambahan bayangan agar foto lebih menonjol (opsional) */
+    box-shadow: 0 0 30px rgba(122, 0, 255, 0.3);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(0, 188, 212, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(122, 0, 255, 0.6); }
+    100% { box-shadow: 0 0 20px rgba(0, 188, 212, 0.4); }
+}
+
+/* SCROLL DOWN ARROW */
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #7a00ff;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* KONTEN UMUM */
+.content-section {
+    padding: 80px 0;
+    min-height: 40vh;
+    border-top: 1px solid rgba(122, 0, 255, 0.1);
+}
+
+.section-title {
+    color: #7a00ff;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(122, 0, 255, 0.5);
+}
+
+.subsection-title {
+    color: #00bcd4;
+    text-align: center;
+    margin: 50px 0 30px 0;
+    font-size: 1.8em;
+}
+
+/* TIMELINE (Pendidikan & Pengalaman) */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: rgba(0, 188, 212, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 55%;
+}
+
+.timeline-icon {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 15px;
+    background-color: #7a00ff;
+    border-radius: 50%;
+    border: 3px solid #0d0023;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(122, 0, 255, 0.8);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -30px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -30px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: rgba(122, 0, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(122, 0, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.1);
+    transition: transform 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-content h3 {
+    color: #00bcd4;
+    margin-top: 0;
+}
+
+.timeline-content .date {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content .date {
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content .date {
+    text-align: left;
+}
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Mode Proyek Besar (Mekatronika) - 2 Kolom */
+.project-grid.large-grid-mode {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/* Mode Proyek Kecil (Web/AI) - 3 Kolom */
+.project-grid.small-grid-mode {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* PROJECT CARD */
+.project-card {
+    background-color: rgba(26, 0, 76, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid #7a00ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(122, 0, 255, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+/* PROYEK TAGS */
+.project-tag {
+    background-color: #00bcd4;
+    color: #0d0023;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.tag-plc { background-color: #7a00ff; color: white; }
+.tag-ml { background-color: #ff00ff; color: white; }
+.tag-webdev { background-color: #00bcd4; color: #0d0023; }
+.tag-ai { background-color: #28a745; color: white; }
+.tag-web { background-color: #ffc107; color: #333; }
+.tag-ux { background-color: #58FF33; color: #0d0023; }
+
+/* PROJECT LINKS */
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a,
+.project-links button {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.project-links a:not(.disabled-link),
+.project-links button {
+    background-color: #7a00ff;
+    color: white;
+}
+.project-links a:not(.disabled-link):hover,
+.project-links button:hover {
+    background-color: #9933ff;
+}
+
+.disabled-link {
+    background-color: #444;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* CERTIFICATES GRID */
+.certificates-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* CERTIFICATE CARD */
+.certificate-card {
+    background-color: rgba(26, 0, 76, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid #7a00ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(122, 0, 255, 0.3);
+}
+
+.certificate-card .card-header {
+    margin-bottom: 15px;
+}
+
+.certificate-card h3 {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+.certificate-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(122, 0, 255, 0.3);
+}
+
+.certificate-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.certificate-links a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #7a00ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.certificate-links a:hover {
+    background-color: #9933ff;
+}
+
+/* KONTAK SECTION */
+.contact-section {
+    text-align: center;
+}
+
+.contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(122, 0, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 188, 212, 0.3);
+}
+
+.contact-info {
+    margin-bottom: 30px;
+    color: #b0b0b0;
+}
+
+.contact-btn {
+    display: inline-flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    color: #b0b0b0;
+}
+
+.contact-details i {
+    color: #00bcd4;
+    margin-right: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(122, 0, 255, 0.1);
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* RESPONSIF */
+@media (max-width: 992px) {
+    .hero-illustration {
+        width: 350px;
+        height: 350px;
+        right: 2%;
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .project-grid.large-grid-mode {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 100px;
+    }
+    .main-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .hero-illustration {
+        position: static;
+        transform: none;
+        margin: 50px auto 0;
+        width: 90%;
+        max-width: 300px;
+        height: 300px;
+    }
+    .hero-content {
+        position: static;
+        transform: none;
+        text-align: center;
+        padding-top: 40px;
+        left: auto;
+        max-width: 100%;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Responsif Timeline */
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 0 !important;
+        text-align: left !important;
+    }
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-item:nth-child(odd) .timeline-icon,
+    .timeline-item:nth-child(even) .timeline-icon {
+        left: 23px;
+        right: auto;
+    }
+    .timeline-item:nth-child(odd) .timeline-content .date {
+        text-align: left;
+    }
+    
+    /* MODAL Responsif untuk layar kecil */
+    .modal-content {
+        width: 95%;
+    }
+    .close-modal {
+        top: 15px;
+        right: 25px;
+        font-size: 35px;
+    }
+}
+
+/* --- MODAL FOTO PROTOTIPE --- */
+/* (Dipindahkan ke luar @media agar bekerja di semua layar) */
+
+/* Latar belakang modal (overlay gelap) */
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    z-index: 10000; /* Dibuat sangat tinggi agar di atas nav */
+    padding-top: 60px; /* Ruang di atas gambar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Aktifkan scroll jika gambar terlalu besar */
+    background-color: rgba(0, 0, 0, 0.9); /* Latar belakang hitam transparan */
+}
+
+/* Gambar di dalam modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px; /* Lebar maksimum gambar */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease-in-out; /* Animasi saat muncul */
+}
+
+/* Keterangan gambar (caption) */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    color: #e0e0e0;
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* Tombol tutup (X) */
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+    z-index: 10010;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #7a00ff; /* Warna aksen saat di-hover */
+    text-decoration: none;
+}
+
+/* Animasi Zoom In untuk Modal */
+@keyframes zoomIn {
+    from {transform:scale(0.9); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+/* --- GUNAKAN CSS SEBELUMNYA UNTUK BAGIAN DASAR (BODY, HEADER, HERO, DLL) --- */
+/* Copy paste bagian atas CSS Anda yang lama di sini, lalu ganti/tambahkan bagian di bawah ini */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0023;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ... (CSS Header, Hero, Timeline, Project Card tetap sama) ... */
+
+/* --- STYLING KHUSUS FITUR BARU (KONTAK & KOMENTAR) --- */
+
+/* 1. Layout Kontak Terbagi Dua (Grid) */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi layar jadi 2 kolom */
+    gap: 40px;
+    background-color: rgba(26, 0, 76, 0.5); /* Latar belakang transparan */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(122, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(13, 0, 35, 0.5);
+    align-items: start;
+}
+
+/* 2. Kolom Kiri: Info & Sosmed */
+.contact-info-box h3 {
+    color: #00bcd4;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+.info-item i {
+    color: #7a00ff; /* Warna Ikon */
+    font-size: 1.2em;
+}
+
+/* Tombol Sosmed Bulat */
+.connect-sosmed {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+.connect-sosmed h4 { margin-bottom: 15px; color: #b0b0b0; }
+
+.sosmed-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sosmed-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.sosmed-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+.sosmed-btn.github { background-color: #333; }
+.sosmed-btn.linkedin { background-color: #0077b5; }
+.sosmed-btn.instagram { background-color: #e1306c; }
+
+/* 3. Kolom Kanan: Form Pesan */
+.contact-form-box { width: 100%; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00bcd4;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(13, 0, 35, 0.8);
+    border: 1px solid #7a00ff;
+    border-radius: 5px;
+    color: white;
+    font-family: inherit;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 4. Bagian Komentar */
+.comment-form {
+    background-color: rgba(26, 0, 76, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid #00bcd4;
+    max-width: 800px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.comments-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment-card {
+    display: flex;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    animation: slideIn 0.5s ease;
+}
+
+.comment-avatar {
+    width: 40px; height: 40px;
+    background-color: #7a00ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; align-items: center;
+    flex-shrink: 0;
+}
+
+.comment-body h4 { margin: 0 0 5px 0; color: #00bcd4; }
+.comment-body p { margin: 0 0 10px 0; color: #ddd; font-size: 0.95em; }
+.comment-date { font-size: 0.75em; color: #888; }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif untuk HP (Layar Kecil) */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
+    }
+}
